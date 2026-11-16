@@ -1,0 +1,261 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff9fc;
+    color: #5c4b52;
+    line-height: 1.6;
+}
+
+/* FAIXA DO TOPO */
+.faixa-topo {
+    background-color: #f8dce8;
+    color: #80566a;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* CABEÇALHO */
+header {
+    background: linear-gradient(135deg, #f8dce8, #fff1f6);
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    color: #a76582;
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #805f6d;
+    font-size: 14px;
+}
+
+/* ÁREA DOS PRODUTOS */
+main {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* CARTÃO DE CADA PEÇA */
+.produto {
+    background-color: #ffffff;
+    border: 1px solid #f3e1e9;
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(180, 120, 150, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: aparecer 0.7s ease both;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(180, 120, 150, 0.15);
+}
+
+/* IMAGENS DAS ROUPAS */
+.foto {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: #fffafd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.produto:hover .foto {
+    transform: scale(1.02);
+}
+
+/* NOME DA PEÇA */
+.produto h2 {
+    font-family: Georgia, serif;
+    color: #a76582;
+    font-size: 19px;
+    margin: 12px 0 8px;
+}
+
+/* INFORMAÇÕES */
+.produto p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* PREÇO */
+.preco {
+    color: #a76582;
+    font-size: 20px !important;
+    font-weight: bold;
+    margin: 10px 0 !important;
+}
+
+/* ESTOQUE */
+.estoque {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.disponivel {
+    color: #648b70;
+}
+
+
+
+/* BOTÃO DO INSTAGRAM */
+.instagram {
+    display: inline-block;
+    background-color: #e9b6ca;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 25px;
+    margin-top: 15px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.instagram:hover {
+    background-color: #c987a4;
+    transform: translateY(-2px);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #f8dce8;
+    color: #80566a;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 45px;
+    font-size: 13px;
+}
+
+footer h2 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin-bottom: 5px;
+    color: #a76582;
+}
+
+footer a {
+    color: #a76582;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLETS */
+@media (max-width: 850px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    
+    .foto {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: #fffafd;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+    }
+
+
+/* CELULARES */
+@media (max-width: 500px) {
+    main {
+        padding: 0 12px;
+        margin: 22px auto;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .produto {
+        padding: 9px;
+        border-radius: 10px;
+    }
+
+    .foto {
+        height: 190px;
+        border-radius: 7px;
+    }
+
+    .produto h2 {
+        font-size: 16px;
+    }
+
+    .produto p {
+        font-size: 12px;
+    }
+
+    .preco {
+        font-size: 17px !important;
+    }
+
+    header {
+        padding: 25px 10px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}
+
+/* ACESSIBILIDADE: REDUZ MOVIMENTOS */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+.instagram {
+    display: block;
+    width: fit-content;
+    margin: 15px auto 0;
+    text-align: center;
+}
+.produto img {
+    border-radius: 12px;
+    clip-path: inset(0 round 12px);
+}
